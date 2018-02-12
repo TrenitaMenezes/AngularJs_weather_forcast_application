@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+  </head>
+
+    <body ng-controller="weatherController" class="text-center info" ng-style="weatherBackground">
+      <h1>{{channelInfo.heading}}</h1>
+      <h2>{{location}}</h2>
+        <a class="btn-primary.gradient btn-lg"> {{description | uppercase}}
+          <img ng-src="{{icon}}"/>
+        </a>
+        <a class="btn-primary.gradient btn-lg"> {{speed}} </a>
+        <a class="btn-primary.gradient btn-lg"> {{humidity}} </a>
+        <a class="bbtn-primary.gradient btn-lg" ng-init="tempVal=true" ng-show="tempVal"
+      ng-click="tempVal=!tempVal"> {{fTemp}} </a>
+        <a class="btn-primary.gradient btn-lg" ng-show="!tempVal"
+         ng-click="tempVal=!tempVal"> {{cTemp}} </a>
+
+        <!-- <div fusioncharts
+             width="600"
+             height="400"
+             type="column2d"
+              dataSource="{{forcastJsonArray}}" >
+        </div> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="https://cdn.ovo.ua/pub/fusioncharts/fusioncharts.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/angular-fusioncharts.min.js"></script>
+  </body>
+</html>
